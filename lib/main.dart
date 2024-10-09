@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:news_app/services/remote_config_service.dart';
 import 'package:provider/provider.dart';
 
 import 'providers/auth_provider.dart';
@@ -11,6 +12,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await RemoteConfigService().initialize();
   runApp(MyApp());
 }
 
